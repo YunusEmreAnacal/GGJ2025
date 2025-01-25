@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Meal : MonoBehaviour
 {
-    public int foodIncrease = 25; // Etin karakterin sağlığını ne kadar artıracağı
     [SerializeField]private AudioClip eatVoice;
 
     
@@ -14,8 +13,8 @@ public class Meal : MonoBehaviour
         if (other.CompareTag("Player"))
         {
 
-            Character.Instance.IncreaseFood(foodIncrease);
-            other.GetComponent<AudioSource>().PlayOneShot(eatVoice);
+            Character.Instance.IncreaseHealth();
+            //other.GetComponent<AudioSource>().PlayOneShot(eatVoice);
             // Et objesini yok et
             Destroy(gameObject);
             
