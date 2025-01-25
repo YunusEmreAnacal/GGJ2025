@@ -419,8 +419,7 @@ namespace StarterAssets
 
         public void JumpAndGravity()
         {
-            if (!isSwimming)
-            {
+            
                 if (Grounded)
                 {
                     // reset the fall timeout timer
@@ -486,11 +485,8 @@ namespace StarterAssets
                 {
                     _verticalVelocity += Gravity * Time.deltaTime;
                 }
-            }
-            else
-            {
-               
-            }
+            
+            
             
         }
 
