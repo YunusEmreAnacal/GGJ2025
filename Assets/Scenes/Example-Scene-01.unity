@@ -10072,36 +10072,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 756555128}
   m_LocalEulerAnglesHint: {x: 0, y: -178.752, z: 0}
---- !u!1 &242550371 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1464672898623261348, guid: 253c9ff7d5ef27442969cd933787745e, type: 3}
-  m_PrefabInstance: {fileID: 408869306}
-  m_PrefabAsset: {fileID: 0}
---- !u!143 &242550377 stripped
-CharacterController:
-  m_CorrespondingSourceObject: {fileID: 519816693329935, guid: 253c9ff7d5ef27442969cd933787745e, type: 3}
-  m_PrefabInstance: {fileID: 408869306}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &242550378 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3770954812389601960, guid: 253c9ff7d5ef27442969cd933787745e, type: 3}
-  m_PrefabInstance: {fileID: 408869306}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &242550379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 242550371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2afccd733c50fff4db0794d96a49b065, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 242550378}
-  damageHurtVoice: {fileID: 0}
-  characterController: {fileID: 242550377}
 --- !u!1 &361914054
 GameObject:
   m_ObjectHideFlags: 0
@@ -15055,10 +15025,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1464672898623261348, guid: 253c9ff7d5ef27442969cd933787745e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 242550379}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 253c9ff7d5ef27442969cd933787745e, type: 3}
 --- !u!1 &422741714
 GameObject:
