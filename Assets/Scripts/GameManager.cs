@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit(); 
-        UnityEditor.EditorApplication.isPlaying = false; 
+         
     }
 
     // Oyunu duraklat ve Pause menüsünü aç
