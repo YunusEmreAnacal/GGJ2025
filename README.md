@@ -57,7 +57,7 @@ You can download the prototype directly from the repository's **win** folder:
 ➡ [Download The Last Water Bender Build](https://github.com/YunusEmreAnacal/GGJ2025/tree/main/win)
 
 ### How to Run:
-```markdown
+
 1. Navigate to the `win` folder in the repository.
 2. Download the contents of the folder.
 3. Run the executable file to play the game!
@@ -65,7 +65,7 @@ You can download the prototype directly from the repository's **win** folder:
 
 ## 🌟 Team and Credits
 
-```markdown
+
 - **Game Designer**: [Your Name]  
 - **Programmer**: [Your Name or Team Members]  
 - **Art and Visual Effects**: [Your Name or Team Members]  
@@ -73,7 +73,7 @@ You can download the prototype directly from the repository's **win** folder:
 
 ## 🔮 Future Plans
 
-```markdown
+
 - Add more enemy types and boss battles.
 - Introduce new water abilities and power-ups.
 - Expand level design with different biomes.
