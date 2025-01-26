@@ -78,7 +78,7 @@ public class Character : MonoBehaviour
     {
         if (isDead) return;
                 Debug.Log("ıncrsesaaaa ");
-                Health = Mathf.Min(MaxHealth, Health - 10);
+                Health = Mathf.Min(MaxHealth, Health + 10);
                 OnHealthChanged?.Invoke(Health);
      
     }

@@ -7,7 +7,15 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private GameObject waterBulletPrefab;
     [SerializeField] private float bulletSpeed = 5f;
     [SerializeField] private float shootCooldown = 0.5f;
-   
+
+    [Header("Animation Settings")]
+    [SerializeField] private Animator animator; // Animasyon kontrolcüsü
+    [SerializeField] private string attackAnimationTrigger = "Attack";
+
+    [Header("Audio Settings")]
+    [SerializeField] private AudioSource audioSource; // Ses kaynaðý
+    [SerializeField] private AudioClip shootSoundEffect; // Ses efekti
+
     private Vector2 aimPosition;
     private Camera mainCamera;
     private float nextShootTime;
@@ -35,7 +43,18 @@ public class PlayerAttack : MonoBehaviour
     private void Shoot()
     {
         nextShootTime = Time.time + shootCooldown;
-       
+
+        if (animator != null)
+        {
+            animator.SetTrigger(attackAnimationTrigger);
+        }
+
+        
+        if (audioSource != null && shootSoundEffect != null)
+        {
+            audioSource.PlayOneShot(shootSoundEffect);
+        }
+
         Ray ray = mainCamera.ScreenPointToRay(aimPosition);
         if (groundPlane.Raycast(ray, out float distance))
         {

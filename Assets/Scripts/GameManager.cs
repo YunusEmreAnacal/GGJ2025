@@ -8,9 +8,10 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [SerializeField] private GameObject gameOverUI;
-    [SerializeField] private GameObject controllerUI;
+    [SerializeField] private GameObject pauseMenuUI;
 
     private bool isGameOver = false;
+    private bool isPaused = false;
 
     private void Awake()
     {
@@ -29,6 +30,23 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         gameOverUI.SetActive(false);
+        pauseMenuUI.SetActive(false);
+    }
+
+    private void Update()
+    {
+        // Escape tuşu ile Pause menüsünü aç/kapat
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused)
+            {
+                ResumeGame();
+            }
+            else
+            {
+                PauseGame();
+            }
+        }
     }
 
     public void GameOver()
@@ -36,7 +54,6 @@ public class GameManager : MonoBehaviour
         if (isGameOver) return;
 
         isGameOver = true;
-        controllerUI.SetActive(false);
         gameOverUI.SetActive(true);
 
         Time.timeScale = 0f;
@@ -63,6 +80,22 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit(); 
         UnityEditor.EditorApplication.isPlaying = false; 
+    }
+
+    // Oyunu duraklat ve Pause menüsünü aç
+    public void PauseGame()
+    {
+        isPaused = true;
+        pauseMenuUI.SetActive(true); // Pause menüsünü aç
+        Time.timeScale = 0f; // Oyun zamanını duraklat
+    }
+
+    // Oyunu devam ettir ve Pause menüsünü kapat
+    public void ResumeGame()
+    {
+        isPaused = false;
+        pauseMenuUI.SetActive(false); // Pause menüsünü kapat
+        Time.timeScale = 1f; // Oyun zamanını devam ettir
     }
 }
 
