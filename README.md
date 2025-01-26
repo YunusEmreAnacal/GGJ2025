@@ -39,15 +39,15 @@ This game is a **prototype** built in **just 1 day** during the **Global Game Ja
 
 ## 📸 Screenshots
 
-![Screenshot 1](![Screenshot 1](https://github.com/YunusEmreAnacal/GGJ2025/raw/main/ScreenShots/ss1.jpg)
+![Screenshot 1]((https://github.com/YunusEmreAnacal/GGJ2025/raw/main/ScreenShots/ss1.jpg)
 )  
 *Caption: Game Menu*
 
-![Screenshot 2](![Screenshot 1](https://github.com/YunusEmreAnacal/GGJ2025/raw/main/ScreenShots/ss2.png)
+![Screenshot 2]((https://github.com/YunusEmreAnacal/GGJ2025/raw/main/ScreenShots/ss2.jpg)
 )  
 *Caption: Katara in Level*
 
-![Screenshot 3](![Screenshot 1](https://github.com/YunusEmreAnacal/GGJ2025/raw/main/ScreenShots/ss3.png)
+![Screenshot 3]((https://github.com/YunusEmreAnacal/GGJ2025/raw/main/ScreenShots/ss3.jpg)
 )  
 *Caption: Katara with the skeletons*
 
