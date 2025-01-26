@@ -39,7 +39,7 @@ This game is a **prototype** built in **just 1 day** during the **Global Game Ja
 
 ## 📸 Screenshots
 
-![Screenshot 1](![Screenshot 1](https://github.com/YunusEmreAnacal/GGJ2025/raw/ScreenShots/ss1.png)
+![Screenshot 1](![Screenshot 1](https://github.com/YunusEmreAnacal/GGJ2025/raw/main/ScreenShots/ss1.jpg)
 )  
 *Caption: Game Menu*
 
