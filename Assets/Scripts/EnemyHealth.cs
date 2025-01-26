@@ -19,7 +19,7 @@ public class EnemyHealth : MonoBehaviour, IHealth
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        
+        Debug.Log(currentHealth);   
         if (currentHealth <= 0) Destroy(gameObject);
     }
 }

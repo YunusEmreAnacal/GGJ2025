@@ -9606,7 +9606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 5
-  damage: 10
+  damage: 2
 --- !u!199 &5122495324394048965
 ParticleSystemRenderer:
   serializedVersion: 6
