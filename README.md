@@ -23,7 +23,7 @@ This game is a **prototype** built in **just 1 day** during the **Global Game Ja
 
 - **Game Engine**: Unity  
 - **Programming**: C#  
-- **Graphics Pipeline**: HDRP (High Definition Render Pipeline)  
+- **Graphics Pipeline**: URP (Universal Render Pipeline)  
 - **AI and Enemy Spawning**: Custom wave-based enemy AI system  
 - **Water Mechanics**: Shader-based water rendering and particle effects  
 
@@ -68,10 +68,10 @@ You can download the prototype directly from the repository's **win** folder:
 ## 🌟 Team and Credits
 
 
-- **Game Designer**: [Your Name]  
-- **Programmer**: [Your Name or Team Members]  
-- **Art and Visual Effects**: [Your Name or Team Members]  
-- **Music and Sound Design**: [Your Name or Team Members]  
+- **Game Designer**: [Yunus Emre Anaçal]  
+- **Programmer**: [Yunus Emre Anaçal - Ozan İpekten]  
+- **Art and Visual Effects**: [Yunus Emre Anaçal]  
+- **Music and Sound Design**: [Yunus Emre Anaçal]  
 
 ## 🔮 Future Plans
 
