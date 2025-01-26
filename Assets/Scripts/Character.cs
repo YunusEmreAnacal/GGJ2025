@@ -65,6 +65,8 @@ public class Character : MonoBehaviour
         animator.SetTrigger("ZombieHit");
 
         OnHealthChanged?.Invoke(Health);
+        
+        Debug.Log("took damage");
 
         if (Health <= 0)
         {

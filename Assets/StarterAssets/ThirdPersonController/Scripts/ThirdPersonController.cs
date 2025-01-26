@@ -212,10 +212,6 @@ namespace StarterAssets
                     zombieHealth.TakeDamage(damage, transform.position);
                 }
             }
-            else
-            {
-
-            }
         }
 
 
