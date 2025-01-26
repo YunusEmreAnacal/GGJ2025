@@ -54,11 +54,11 @@ This game is a **prototype** built in **just 1 day** during the **Global Game Ja
 ## 💾 Download and Play
 
 You can download the prototype directly from the repository's **win** folder:  
-➡ [Download The Last Water Bender Build](https://github.com/YunusEmreAnacal/GGJ2025/tree/main/win)
+➡ [Download The Last Water Bender Build](https://github.com/YunusEmreAnacal/GGJ2025/tree/main/BuildWin)
 
 ### How to Run:
 
-1. Navigate to the `win` folder in the repository.
+1. Navigate to the `BuildWin` folder in the repository.
 2. Download the contents of the folder.
 3. Run the executable file to play the game!
 
