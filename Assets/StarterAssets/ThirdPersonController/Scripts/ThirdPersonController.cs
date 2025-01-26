@@ -331,21 +331,21 @@ namespace StarterAssets
 
         private void CameraRotation()
         {
-            // if there is an input and camera position is not fixed
+            // Eğer girdi varsa ve kamera pozisyonu sabit değilse
             if (_input.look.sqrMagnitude >= _threshold && !LockCameraPosition)
             {
-                //Don't multiply mouse input by Time.deltaTime;
+                // Mouse için deltaTime çarpanı
                 float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
 
                 _cinemachineTargetYaw += _input.look.x * deltaTimeMultiplier;
                 _cinemachineTargetPitch += _input.look.y * deltaTimeMultiplier;
             }
 
-            // clamp our rotations so our values are limited 360 degrees
+            // Rotasyonları sınırlama
             _cinemachineTargetYaw = ClampAngle(_cinemachineTargetYaw, float.MinValue, float.MaxValue);
             _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
 
-            // Cinemachine will follow this target
+            // Cinemachine'in takip edeceği hedef
             CinemachineCameraTarget.transform.rotation = Quaternion.Euler(_cinemachineTargetPitch + CameraAngleOverride,
                 _cinemachineTargetYaw, 0.0f);
         }
@@ -354,17 +354,17 @@ namespace StarterAssets
         {
             Gravity = walkingGravity;
 
-            // Determine target speed
+            // Hedef hızı belirleme
             float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
 
-            // If no movement input, set target speed to 0
+            // Eğer hareket yoksa hedef hızı 0 yap
             if (_input.move == Vector2.zero) targetSpeed = 0.0f;
 
-            // Current speed in the horizontal plane
+            // Mevcut hız
             float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
             float speedOffset = 0.1f;
 
-            // Speed up or slow down based on the target speed
+            // Hızlanma ve yavaşlama
             if (currentHorizontalSpeed < targetSpeed - speedOffset ||
                 currentHorizontalSpeed > targetSpeed + speedOffset)
             {
@@ -375,39 +375,40 @@ namespace StarterAssets
                 _speed = targetSpeed;
             }
 
-            // Get input direction
+            // Girdi yönünü normalize et
             Vector3 inputDirection = Vector3.ClampMagnitude(new Vector3(_input.move.x, 0, _input.move.y), 1);
 
-            // Get the direction the character should move in relation to the mouse position
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane));
-            Vector3 mouseDirection = (mousePosition - transform.position).normalized;
-            mouseDirection.y = 0; // We don't need the vertical direction for movement
+            // Her zaman kameraya doğru yüzünü döndür
+            _targetRotation = _mainCamera.transform.eulerAngles.y;
+            float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity, RotationSmoothTime);
+            transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
 
-            // Calculate the movement direction based on input and mouse direction
-            Vector3 moveDirection = (inputDirection.x * transform.right + inputDirection.z * transform.forward) * _speed;
+            // Kameranın yönüne göre hedef hareket yönü
+            Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * inputDirection;
 
-            // Move the character
-            _controller.Move(moveDirection * Time.deltaTime);
+            // Karakteri hareket ettir
+            _controller.Move(targetDirection * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
 
-            // Animator update
+            // Animator güncellemesi
             if (_hasAnimator)
             {
-                float currentX = _animator.GetFloat("x");
-                float currentY = _animator.GetFloat("y");
+                // Kameranın yönüne göre x ve y değerlerini hesapla
+                Vector3 localMovement = transform.InverseTransformDirection(targetDirection);
 
-                // Calculate target x and y values based on input and sprint multiplier
-                float runMultiplier = _input.sprint ? 1.0f : 0.1f;
-                float targetX = Mathf.Min(_input.move.x, 1) * runMultiplier;
-                float targetY = Mathf.Min(_input.move.y, 1) * runMultiplier;
+                // Animator için hedef x ve y değerleri
+                float targetX = localMovement.x;
+                float targetY = localMovement.z;
 
-                // Smooth transition to target values
-                float x = Mathf.Lerp(currentX, targetX, Time.deltaTime * SpeedChangeRate);
-                float y = Mathf.Lerp(currentY, targetY, Time.deltaTime * SpeedChangeRate);
+                // Hedef değerlere yumuşak geçiş
+                float x = Mathf.Lerp(_animator.GetFloat("x"), targetX, Time.deltaTime * SpeedChangeRate);
+                float y = Mathf.Lerp(_animator.GetFloat("y"), targetY, Time.deltaTime * SpeedChangeRate);
 
+                // Animator parametrelerini ayarla
                 _animator.SetFloat("x", x);
                 _animator.SetFloat("y", y);
             }
         }
+
 
 
 
