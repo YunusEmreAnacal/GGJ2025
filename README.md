@@ -1,6 +1,5 @@
 # The Last Water Bender
 
-![Game Screenshot](https://via.placeholder.com/800x400?text=Add+Your+Game+Screenshot+Here)
 
 ## 🌀 About the Game
 
@@ -40,14 +39,14 @@ This game is a **prototype** built in **just 1 day** during the **Global Game Ja
 
 ## 📸 Screenshots
 
-![Screenshot 1](https://via.placeholder.com/800x400?text=Add+Screenshot+1)  
-*Caption: Player using water to attack incoming skeletons.*
+![Screenshot 1](https://github.com/YunusEmreAnacal/GGJ2025/raw/main//ScreenShots/ss1.png)  
+*Caption: Game Menu*
 
-![Screenshot 2](https://via.placeholder.com/800x400?text=Add+Screenshot+2)  
-*Caption: Intense battle in a misty, water-filled environment.*
+![Screenshot 2](https://github.com/YunusEmreAnacal/GGJ2025/raw/main//ScreenShots/ss2.png)  
+*Caption: Katara in Level*
 
-![Screenshot 3](https://via.placeholder.com/800x400?text=Add+Screenshot+3)  
-*Caption: Skeletons emerging from the fog.*
+![Screenshot 3](https://github.com/YunusEmreAnacal/GGJ2025/raw/main//ScreenShots/ss3.png)  
+*Caption: Katara with the skeletons*
 
 ---
 
